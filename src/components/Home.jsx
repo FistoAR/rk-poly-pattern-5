@@ -125,14 +125,21 @@ import {
   sb_1000_3,
 
   // sweet box 4
-  sb_250_4_1,
-  sb_250_4_2,
+  sb_250_4_1_1,
+  sb_250_4_1_2,
+  sb_250_4_2_1,
+  sb_250_4_2_2,
+
   sb_500_4_1_1,
   sb_500_4_1_2,
   sb_500_4_2_1,
   sb_500_4_2_2,
   sb_500_4_3_1,
   sb_500_4_3_2,
+  sb_500_4_4_1,
+  sb_500_4_4_2,
+  sb_500_4_5_1,
+  sb_500_4_5_2,
 
   // sweet box 5
   sb_250_5_1,
@@ -531,28 +538,28 @@ export default function ModelViewer() {
               dimensions_lid: "1512px X 1152px (W x H)", // TOP LID dimension
               dimensions_tub: "2402px X 2048px (W x H)", // 4 SIDE dimension
               lidPatterns: [
-                sb_250_4_2,
-                sb_250_4_2,
-                sb_250_4_2,
-                sb_250_4_2,
-                sb_250_4_2,
-                sb_250_4_2,
-                sb_250_4_2,
-                sb_250_4_2,
-                sb_250_4_2,
-                sb_250_4_2,
+                sb_250_4_1_2,
+                sb_250_4_2_2,
+                sb_250_4_1_2,
+                sb_250_4_2_2,
+                sb_250_4_1_2,
+                sb_250_4_2_2,
+                sb_250_4_1_2,
+                sb_250_4_2_2,
+                sb_250_4_1_2,
+                sb_250_4_2_2,
               ],
               tubPatterns: [
-                sb_250_4_1,
-                sb_250_4_1,
-                sb_250_4_1,
-                sb_250_4_1,
-                sb_250_4_1,
-                sb_250_4_1,
-                sb_250_4_1,
-                sb_250_4_1,
-                sb_250_4_1,
-                sb_250_4_1,
+                sb_250_4_1_1,
+                sb_250_4_2_1,
+                sb_250_4_1_1,
+                sb_250_4_2_1,
+                sb_250_4_1_1,
+                sb_250_4_2_1,
+                sb_250_4_1_1,
+                sb_250_4_2_1,
+                sb_250_4_1_1,
+                sb_250_4_2_1,
               ],
               modelScale: 0.65,
             },
@@ -568,25 +575,25 @@ export default function ModelViewer() {
                 sb_500_4_1_2,
                 sb_500_4_2_2,
                 sb_500_4_3_2,
+                sb_500_4_4_2,
+                sb_500_4_5_2,
                 sb_500_4_1_2,
                 sb_500_4_2_2,
                 sb_500_4_3_2,
-                sb_500_4_1_2,
-                sb_500_4_2_2,
-                sb_500_4_3_2,
-                sb_500_4_1_2,
+                sb_500_4_4_2,
+                sb_500_4_5_2,
               ],
               tubPatterns: [
                 sb_500_4_1_1,
                 sb_500_4_2_1,
                 sb_500_4_3_1,
+                sb_500_4_4_1,
+                sb_500_4_5_1,
                 sb_500_4_1_1,
                 sb_500_4_2_1,
                 sb_500_4_3_1,
-                sb_500_4_1_1,
-                sb_500_4_2_1,
-                sb_500_4_3_1,
-                sb_500_4_1_1,
+                sb_500_4_4_1,
+                sb_500_4_5_1,
               ],
               modelScale: 0.65,
             },
@@ -755,9 +762,18 @@ export default function ModelViewer() {
       const name = m.name?.toLowerCase();
       return (
         name &&
-        name.endsWith("texture") &&
         !name.endsWith("notexture") &&
-        !name.endsWith("subtexture")
+        !name.endsWith("subtexture") &&
+        name.endsWith("texture") 
+      );
+    });
+  
+  const getSubTextureMaterials = (materials) =>
+    materials.filter((m) => {
+      const name = m.name?.toLowerCase();
+      return (
+        name &&
+        name.endsWith("subtexture") 
       );
     });
 
@@ -789,7 +805,15 @@ export default function ModelViewer() {
     }
 
     textureMats.forEach((mat) => {
+      console.log(`textureMats: ${mat.name}`);
       mat.pbrMetallicRoughness.baseColorTexture.setTexture(tex);
+      mat.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 1]);
+      mat.setAlphaMode("OPAQUE");
+    });
+    
+    const textureSubMats = getSubTextureMaterials(materials);
+    textureSubMats.forEach((mat) => {
+      console.log(`textureMats: ${mat.name}`);
       mat.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 1]);
       mat.setAlphaMode("OPAQUE");
     });
