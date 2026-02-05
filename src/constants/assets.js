@@ -142,6 +142,8 @@ import sb_250_4_1_1 from "../assets/images/label-pattern/sweet_box_4/250gms/250_
 import sb_250_4_1_2 from "../assets/images/label-pattern/sweet_box_4/250gms/250_2.png";
 import sb_250_4_2_1 from "../assets/images/label-pattern/sweet_box_4/250gms/250_3.png";
 import sb_250_4_2_2 from "../assets/images/label-pattern/sweet_box_4/250gms/250_4.png";
+import sb_250_4_3_1 from "../assets/images/label-pattern/sweet_box_4/250gms/250_5.png";
+import sb_250_4_3_2 from "../assets/images/label-pattern/sweet_box_4/250gms/250_6.png";
 
 import sb_500_4_1_1 from "../assets/images/label-pattern/sweet_box_4/500gms/500_1_1.png";
 import sb_500_4_1_2 from "../assets/images/label-pattern/sweet_box_4/500gms/500_1_2.png";
@@ -328,6 +330,8 @@ export {
   sb_250_4_1_2,
   sb_250_4_2_1,
   sb_250_4_2_2,
+  sb_250_4_3_1,
+  sb_250_4_3_2,
 
   sb_500_4_1_1,
   sb_500_4_1_2,
