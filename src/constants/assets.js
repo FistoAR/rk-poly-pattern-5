@@ -95,14 +95,29 @@ import pattern1Image from "../assets/images/label-pattern/pattern.webp";
 import round_250_1 from "../assets/images/label-pattern/round/250ml/round_1.png";
 import round_250_2 from "../assets/images/label-pattern/round/250ml/round_2.png";
 import round_250_3 from "../assets/images/label-pattern/round/250ml/round_3.png";
+import round_250_4 from "../assets/images/label-pattern/round/250ml/round_4.png";
+import round_250_5 from "../assets/images/label-pattern/round/250ml/round_5.png";
+import round_250_6 from "../assets/images/label-pattern/round/250ml/round_6.png";
 
 import round_400_1 from "../assets/images/label-pattern/round/400ml/round_1.png";
 import round_500_1 from "../assets/images/label-pattern/round/500ml/round_1.png";
 
 // round square pattern
-import rs_300_1 from "../assets/images/label-pattern/round_square/300ml/rs_1.png";
-import rs_300_2 from "../assets/images/label-pattern/round_square/300ml/rs_2.png";
-import rs_500_1 from "../assets/images/label-pattern/round_square/500ml/rs_1.png";
+import rs_300_1 from "../assets/images/label-pattern/round_square/300ml/1.png";
+import rs_300_2 from "../assets/images/label-pattern/round_square/300ml/2.png";
+import rs_300_3 from "../assets/images/label-pattern/round_square/300ml/3.png";
+import rs_300_4 from "../assets/images/label-pattern/round_square/300ml/4.png";
+import rs_300_5 from "../assets/images/label-pattern/round_square/300ml/5.png";
+import rs_300_6 from "../assets/images/label-pattern/round_square/300ml/6.png";
+import rs_300_7 from "../assets/images/label-pattern/round_square/300ml/7.png";
+import rs_300_8 from "../assets/images/label-pattern/round_square/300ml/8.png";
+import rs_300_9 from "../assets/images/label-pattern/round_square/300ml/9.png";
+import rs_300_10 from "../assets/images/label-pattern/round_square/300ml/10.png";
+
+import rs_500_1 from "../assets/images/label-pattern/round_square/500ml/1.png";
+import rs_500_2 from "../assets/images/label-pattern/round_square/500ml/2.png";
+import rs_500_3 from "../assets/images/label-pattern/round_square/500ml/3.png";
+
 import rs_750_1 from "../assets/images/label-pattern/round_square/750ml/rs_1.png";
 import rs_750_2 from "../assets/images/label-pattern/round_square/750ml/rs_2.png";
 import rs_1000_1 from "../assets/images/label-pattern/round_square/1000ml/rs_1.png";
@@ -260,12 +275,28 @@ export {
   round_250_1,
   round_250_2,
   round_250_3,
+  round_250_4,
+  round_250_5,
+  round_250_6,
+
   round_400_1,
   round_500_1,
   // round square
   rs_300_1,
   rs_300_2,
+  rs_300_3,
+  rs_300_4,
+  rs_300_5,
+  rs_300_6,
+  rs_300_7,
+  rs_300_8,
+  rs_300_9,
+  rs_300_10,
+
   rs_500_1,
+  rs_500_2,  
+  rs_500_3,
+  
   rs_750_1,
   rs_750_2,
   rs_1000_1,
