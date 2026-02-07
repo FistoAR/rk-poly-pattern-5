@@ -108,6 +108,7 @@ import {
   
   rs_750_1,
   rs_750_2,
+  rs_750_3,
   rs_1000_1,
   rs_1000_2,
 
@@ -417,14 +418,14 @@ export default function ModelViewer() {
           patterns: [
             rs_750_1,
             rs_750_2,
+            rs_750_3,
             rs_750_1,
             rs_750_2,
+            rs_750_3,
             rs_750_1,
             rs_750_2,
+            rs_750_3,
             rs_750_1,
-            rs_750_2,
-            rs_750_1,
-            rs_750_2,
           ],
           modelScale: 0.8,
         },

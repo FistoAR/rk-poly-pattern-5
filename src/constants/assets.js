@@ -120,6 +120,8 @@ import rs_500_3 from "../assets/images/label-pattern/round_square/500ml/3.png";
 
 import rs_750_1 from "../assets/images/label-pattern/round_square/750ml/rs_1.png";
 import rs_750_2 from "../assets/images/label-pattern/round_square/750ml/rs_2.png";
+import rs_750_3 from "../assets/images/label-pattern/round_square/750ml/rs_3.png";
+
 import rs_1000_1 from "../assets/images/label-pattern/round_square/1000ml/rs_1.png";
 import rs_1000_2 from "../assets/images/label-pattern/round_square/1000ml/rs_2.png";
 // sweet box pattern
@@ -307,6 +309,7 @@ export {
 
   rs_750_1,
   rs_750_2,
+  rs_750_3,
   rs_1000_1,
   rs_1000_2,
   
