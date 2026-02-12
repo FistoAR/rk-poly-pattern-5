@@ -172,29 +172,45 @@ import sb_500_5_2_2 from "../assets/images/label-pattern/sweet_box_5/500g/500_2_
 // sweet box TE 5 side
 
 // ************ SB TE 250 Patterns*********************
-import sb_te_250_1_1 from "../assets/images/label-pattern/tamper-evident/250_gms/250-1-1.png";
-import sb_te_250_1_2 from "../assets/images/label-pattern/tamper-evident/250_gms/250-1-2.png";
-import sb_te_250_2_1 from "../assets/images/label-pattern/tamper-evident/250_gms/250-2-1.png";
-import sb_te_250_2_2 from "../assets/images/label-pattern/tamper-evident/250_gms/250-2-2.png";
-import sb_te_250_3_1 from "../assets/images/label-pattern/tamper-evident/250_gms/250-3-1.png";
-import sb_te_250_3_2 from "../assets/images/label-pattern/tamper-evident/250_gms/250-3-2.png";
-import sb_te_250_4_1 from "../assets/images/label-pattern/tamper-evident/250_gms/250-4-1.png";
-import sb_te_250_4_2 from "../assets/images/label-pattern/tamper-evident/250_gms/250-4-2.png";
-import sb_te_250_5_1 from "../assets/images/label-pattern/tamper-evident/250_gms/250-5-1.png";
-import sb_te_250_5_5 from "../assets/images/label-pattern/tamper-evident/250_gms/250-5-2.png";
+import sb_te_250_1_1 from "../assets/images/label-pattern/tamper-evident/250_gms/1_1.png";
+import sb_te_250_1_2 from "../assets/images/label-pattern/tamper-evident/250_gms/1_2.png";
+import sb_te_250_2_1 from "../assets/images/label-pattern/tamper-evident/250_gms/2_1.png";
+import sb_te_250_2_2 from "../assets/images/label-pattern/tamper-evident/250_gms/2_2.png";
+import sb_te_250_3_1 from "../assets/images/label-pattern/tamper-evident/250_gms/3_1.png";
+import sb_te_250_3_2 from "../assets/images/label-pattern/tamper-evident/250_gms/3_2.png";
+import sb_te_250_4_1 from "../assets/images/label-pattern/tamper-evident/250_gms/4_1.png";
+import sb_te_250_4_2 from "../assets/images/label-pattern/tamper-evident/250_gms/4_2.png";
+import sb_te_250_5_1 from "../assets/images/label-pattern/tamper-evident/250_gms/5_1.png";
+import sb_te_250_5_5 from "../assets/images/label-pattern/tamper-evident/250_gms/5_2.png";
+import sb_te_250_6_1 from "../assets/images/label-pattern/tamper-evident/250_gms/6_1.png";
+import sb_te_250_6_2 from "../assets/images/label-pattern/tamper-evident/250_gms/6_2.png";
+import sb_te_250_7_1 from "../assets/images/label-pattern/tamper-evident/250_gms/7_1.png";
+import sb_te_250_7_2 from "../assets/images/label-pattern/tamper-evident/250_gms/7_2.png";
+import sb_te_250_8_1 from "../assets/images/label-pattern/tamper-evident/250_gms/8_1.png";
+import sb_te_250_8_2 from "../assets/images/label-pattern/tamper-evident/250_gms/8_2.png";
 
 
 
 
 // ************ SB TE 500 Patterns*********************
-import sb_te_500_1_1 from "../assets/images/label-pattern/tamper-evident/500_gms/500-1-1.png";
-import sb_te_500_2_1 from "../assets/images/label-pattern/tamper-evident/500_gms/500-1-2.png";
-import sb_te_500_1_2 from "../assets/images/label-pattern/tamper-evident/500_gms/500-2-1.png";
-import sb_te_500_2_2 from "../assets/images/label-pattern/tamper-evident/500_gms/500-2-2.png";
-import sb_te_500_1_3 from "../assets/images/label-pattern/tamper-evident/500_gms/500-3-1.png";
-import sb_te_500_2_3 from "../assets/images/label-pattern/tamper-evident/500_gms/500-3-2.png";
-import sb_te_500_1_4 from "../assets/images/label-pattern/tamper-evident/500_gms/500-4-1.png";
-import sb_te_500_2_4 from "../assets/images/label-pattern/tamper-evident/500_gms/500-4-2.png";
+import sb_te_500_1_1 from "../assets/images/label-pattern/tamper-evident/500_gms/1_1.png";
+import sb_te_500_1_2 from "../assets/images/label-pattern/tamper-evident/500_gms/1_2.png";
+import sb_te_500_2_1 from "../assets/images/label-pattern/tamper-evident/500_gms/2_1.png";
+import sb_te_500_2_2 from "../assets/images/label-pattern/tamper-evident/500_gms/2_2.png";
+import sb_te_500_3_1 from "../assets/images/label-pattern/tamper-evident/500_gms/3_1.png";
+import sb_te_500_3_2 from "../assets/images/label-pattern/tamper-evident/500_gms/3_2.png";
+import sb_te_500_4_1 from "../assets/images/label-pattern/tamper-evident/500_gms/4_1.png";
+import sb_te_500_4_2 from "../assets/images/label-pattern/tamper-evident/500_gms/4_2.png";
+import sb_te_500_5_1 from "../assets/images/label-pattern/tamper-evident/500_gms/5_1.png";
+import sb_te_500_5_2 from "../assets/images/label-pattern/tamper-evident/500_gms/5_2.png";
+import sb_te_500_6_1 from "../assets/images/label-pattern/tamper-evident/500_gms/6_1.png";
+import sb_te_500_6_2 from "../assets/images/label-pattern/tamper-evident/500_gms/6_2.png";
+import sb_te_500_7_1 from "../assets/images/label-pattern/tamper-evident/500_gms/7_1.png";
+import sb_te_500_7_2 from "../assets/images/label-pattern/tamper-evident/500_gms/7_2.png";
+import sb_te_500_8_1 from "../assets/images/label-pattern/tamper-evident/500_gms/8_1.png";
+import sb_te_500_8_2 from "../assets/images/label-pattern/tamper-evident/500_gms/8_2.png";
+import sb_te_500_9_1 from "../assets/images/label-pattern/tamper-evident/500_gms/9_1.png";
+import sb_te_500_9_2 from "../assets/images/label-pattern/tamper-evident/500_gms/9_2.png";
 // import sb_te_500_1_5 from "../assets/images/label-pattern/tamper-evident/500_gms/500-1-1.png";
 // import sb_te_500_2_5 from "../assets/images/label-pattern/tamper-evident/500_gms/500-2-1.png";
 
@@ -369,16 +385,33 @@ sb_te_250_4_1,
 sb_te_250_4_2,
 sb_te_250_5_1,
 sb_te_250_5_5,
+sb_te_250_6_1,
+sb_te_250_6_2,
+sb_te_250_7_1,
+sb_te_250_7_2,
+sb_te_250_8_1,
+sb_te_250_8_2,
 
   // ********Sweet Box Tamper Evident 500 Pattern**********
 sb_te_500_1_1,
-sb_te_500_2_1,
 sb_te_500_1_2,
+sb_te_500_2_1,
 sb_te_500_2_2,
-sb_te_500_1_3,
-sb_te_500_2_3,
-sb_te_500_1_4,
-sb_te_500_2_4,
+sb_te_500_3_1,
+sb_te_500_3_2,
+sb_te_500_4_1,
+sb_te_500_4_2,
+sb_te_500_5_1,
+sb_te_500_5_2,
+sb_te_500_6_1,
+sb_te_500_6_2,
+sb_te_500_7_1,
+sb_te_500_7_2,
+sb_te_500_8_1,
+sb_te_500_8_2,
+sb_te_500_9_1,
+sb_te_500_9_2,
+
 // sb_te_500_1_5,
 // sb_te_500_2_5,
 
