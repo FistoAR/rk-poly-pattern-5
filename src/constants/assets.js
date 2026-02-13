@@ -125,19 +125,28 @@ import rs_750_3 from "../assets/images/label-pattern/round_square/750ml/rs_3.png
 import rs_1000_1 from "../assets/images/label-pattern/round_square/1000ml/rs_1.png";
 import rs_1000_2 from "../assets/images/label-pattern/round_square/1000ml/rs_2.png";
 // sweet box pattern
-import sb_250_1 from "../assets/images/label-pattern/sweet_box/250g/sb_1.png";
-import sb_250_2 from "../assets/images/label-pattern/sweet_box/250g/sb_2.png";
-import sb_250_3 from "../assets/images/label-pattern/sweet_box/250g/sb_3.png";
-import sb_250_4 from "../assets/images/label-pattern/sweet_box/250g/sb_4.png";
+import sb_250_1 from "../assets/images/label-pattern/sweet_box/250g/01.png";
+import sb_250_2 from "../assets/images/label-pattern/sweet_box/250g/02.png";
+import sb_250_3 from "../assets/images/label-pattern/sweet_box/250g/03.png";
 
-import sb_500_1 from "../assets/images/label-pattern/sweet_box/500g/sb_1.png";
-import sb_500_2 from "../assets/images/label-pattern/sweet_box/500g/sb_2.png";
-import sb_500_3 from "../assets/images/label-pattern/sweet_box/500g/sb_3.png";
-import sb_500_4 from "../assets/images/label-pattern/sweet_box/500g/sb_4.png";
+import sb_500_1 from "../assets/images/label-pattern/sweet_box/500g/01.png";
+import sb_500_2 from "../assets/images/label-pattern/sweet_box/500g/02.png";
+import sb_500_3 from "../assets/images/label-pattern/sweet_box/500g/03.png";
+import sb_500_4 from "../assets/images/label-pattern/sweet_box/500g/04.png";
+import sb_500_5 from "../assets/images/label-pattern/sweet_box/500g/05.png";
+import sb_500_6 from "../assets/images/label-pattern/sweet_box/500g/06.png";
+import sb_500_7 from "../assets/images/label-pattern/sweet_box/500g/07.png";
+import sb_500_8 from "../assets/images/label-pattern/sweet_box/500g/08.png";
 
-import sb_1000_1 from "../assets/images/label-pattern/sweet_box/1000g/sb_1.png";
-import sb_1000_2 from "../assets/images/label-pattern/sweet_box/1000g/sb_2.png";
-import sb_1000_3 from "../assets/images/label-pattern/sweet_box/1000g/sb_3.png";
+import sb_1000_1 from "../assets/images/label-pattern/sweet_box/1000g/01.png";
+import sb_1000_2 from "../assets/images/label-pattern/sweet_box/1000g/02.png";
+import sb_1000_3 from "../assets/images/label-pattern/sweet_box/1000g/03.png";
+import sb_1000_4 from "../assets/images/label-pattern/sweet_box/1000g/04.png";
+import sb_1000_5 from "../assets/images/label-pattern/sweet_box/1000g/05.png";
+import sb_1000_6 from "../assets/images/label-pattern/sweet_box/1000g/06.png";
+import sb_1000_7 from "../assets/images/label-pattern/sweet_box/1000g/07.png";
+import sb_1000_8 from "../assets/images/label-pattern/sweet_box/1000g/08.png";
+import sb_1000_9 from "../assets/images/label-pattern/sweet_box/1000g/09.png";
 
 // sweet box 4 side
 import sb_250_4_1_1 from "../assets/images/label-pattern/sweet_box_4/250gms/250_1.png";
@@ -333,16 +342,26 @@ export {
   sb_250_1,
   sb_250_2,
   sb_250_3,
-  sb_250_4,
+  
 
   sb_500_1,
   sb_500_2,
   sb_500_3,
   sb_500_4,
+  sb_500_5,
+  sb_500_6,
+  sb_500_7,
+  sb_500_8,
 
   sb_1000_1,
   sb_1000_2,
   sb_1000_3,
+  sb_1000_4,
+  sb_1000_5,
+  sb_1000_6,
+  sb_1000_7,
+  sb_1000_8,
+  sb_1000_9,
 
   // sweet box 4
   sb_250_4_1_1,
