@@ -107,16 +107,28 @@ import round_500_3 from "../assets/images/label-pattern/round/500ml/round_3.png"
 import round_500_4 from "../assets/images/label-pattern/round/500ml/round_4.png";
 
 // round square pattern
-import rs_300_1 from "../assets/images/label-pattern/round_square/300ml/1.png";
-import rs_300_2 from "../assets/images/label-pattern/round_square/300ml/2.png";
-import rs_300_3 from "../assets/images/label-pattern/round_square/300ml/3.png";
-import rs_300_4 from "../assets/images/label-pattern/round_square/300ml/4.png";
-import rs_300_5 from "../assets/images/label-pattern/round_square/300ml/5.png";
-import rs_300_6 from "../assets/images/label-pattern/round_square/300ml/6.png";
-import rs_300_7 from "../assets/images/label-pattern/round_square/300ml/7.png";
-import rs_300_8 from "../assets/images/label-pattern/round_square/300ml/8.png";
-import rs_300_9 from "../assets/images/label-pattern/round_square/300ml/9.png";
+import rs_300_1 from "../assets/images/label-pattern/round_square/300ml/01.png";
+import rs_300_2 from "../assets/images/label-pattern/round_square/300ml/02.png";
+import rs_300_3 from "../assets/images/label-pattern/round_square/300ml/03.png";
+import rs_300_4 from "../assets/images/label-pattern/round_square/300ml/04.png";
+import rs_300_5 from "../assets/images/label-pattern/round_square/300ml/05.png";
+import rs_300_6 from "../assets/images/label-pattern/round_square/300ml/06.png";
+import rs_300_7 from "../assets/images/label-pattern/round_square/300ml/07.png";
+import rs_300_8 from "../assets/images/label-pattern/round_square/300ml/08.png";
+import rs_300_9 from "../assets/images/label-pattern/round_square/300ml/09.png";
 import rs_300_10 from "../assets/images/label-pattern/round_square/300ml/10.png";
+import rs_300_11 from "../assets/images/label-pattern/round_square/300ml/11.png";
+import rs_300_12 from "../assets/images/label-pattern/round_square/300ml/12.png";
+import rs_300_13 from "../assets/images/label-pattern/round_square/300ml/13.png";
+import rs_300_14 from "../assets/images/label-pattern/round_square/300ml/14.png";
+import rs_300_15 from "../assets/images/label-pattern/round_square/300ml/15.png";
+import rs_300_16 from "../assets/images/label-pattern/round_square/300ml/16.png";
+import rs_300_17 from "../assets/images/label-pattern/round_square/300ml/17.png";
+import rs_300_18 from "../assets/images/label-pattern/round_square/300ml/18.png";
+import rs_300_19 from "../assets/images/label-pattern/round_square/300ml/19.png";
+import rs_300_20 from "../assets/images/label-pattern/round_square/300ml/20.png";
+import rs_300_21 from "../assets/images/label-pattern/round_square/300ml/21.png";
+import rs_300_22 from "../assets/images/label-pattern/round_square/300ml/22.png";
 
 import rs_500_1 from "../assets/images/label-pattern/round_square/500ml/1.png";
 import rs_500_2 from "../assets/images/label-pattern/round_square/500ml/2.png";
@@ -352,6 +364,18 @@ export {
   rs_300_8,
   rs_300_9,
   rs_300_10,
+  rs_300_11,
+  rs_300_12,
+  rs_300_13,
+  rs_300_14,
+  rs_300_15,
+  rs_300_16,
+  rs_300_17,
+  rs_300_18,
+  rs_300_19,
+  rs_300_20,
+  rs_300_21,
+  rs_300_22,
 
   rs_500_1,
   rs_500_2,  

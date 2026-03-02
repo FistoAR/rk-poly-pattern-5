@@ -14,7 +14,6 @@ import {
   round400,
   round500,
 
-
   // round square
   rs300,
   rs500,
@@ -105,11 +104,22 @@ import {
   rs_300_8,
   rs_300_9,
   rs_300_10,
-
+  rs_300_11,
+  rs_300_12,
+  rs_300_13,
+  rs_300_14,
+  rs_300_15,
+  rs_300_16,
+  rs_300_17,
+  rs_300_18,
+  rs_300_19,
+  rs_300_20,
+  rs_300_21,
+  rs_300_22,
+  
   rs_500_1,
   rs_500_2,
   rs_500_3,
-
   rs_750_1,
   rs_750_2,
   rs_750_3,
@@ -122,7 +132,6 @@ import {
   sb_250_3,
   sb_250_4,
   sb_250_5,
-
   sb_500_1,
   sb_500_2,
   sb_500_3,
@@ -135,7 +144,6 @@ import {
   sb_500_10,
   sb_500_11,
   sb_500_12,
-
   sb_1000_1,
   sb_1000_2,
   sb_1000_3,
@@ -156,7 +164,6 @@ import {
   sb_250_4_3_2,
   sb_250_4_4_1,
   sb_250_4_4_2,
-
   sb_500_4_1_1,
   sb_500_4_1_2,
   sb_500_4_2_1,
@@ -432,6 +439,18 @@ export default function ModelViewer() {
             rs_300_8,
             rs_300_9,
             rs_300_10,
+            rs_300_11,
+            rs_300_12,
+            rs_300_13,
+            rs_300_14,
+            rs_300_15,
+            rs_300_16,
+            rs_300_17,
+            rs_300_18,
+            rs_300_19,
+            rs_300_20,
+            rs_300_21,
+            rs_300_22,
           ],
           modelScale: 0.65,
         },
@@ -722,7 +741,6 @@ export default function ModelViewer() {
             sb_te_250_8_1,
             sb_te_250_9_1,
             sb_te_250_10_1,
-            
           ],
           tubPatterns: [
             sb_te_250_1_2,
@@ -827,10 +845,7 @@ export default function ModelViewer() {
   const getSubTextureMaterials = (materials) =>
     materials.filter((m) => {
       const name = m.name?.toLowerCase();
-      return (
-        name &&
-        name.endsWith("subtexture")
-      );
+      return name && name.endsWith("subtexture");
     });
 
   // Update setPatternModel function
@@ -2129,10 +2144,11 @@ export default function ModelViewer() {
               className={`
       px-[1.5vw] py-[0.5vw] rounded-[0.5vw] text-[0.9vw] font-semibold 
       transition-all cursor-pointer border-2
-      ${viewMode === "iml"
-                  ? "bg-[#2F5755] text-white border-[#2F5755] cursor-not-allowed opacity-70"
-                  : "bg-white text-gray-700 border-gray-300 hover:border-[#2F5755] hover:bg-gray-50"
-                }
+      ${
+        viewMode === "iml"
+          ? "bg-[#2F5755] text-white border-[#2F5755] cursor-not-allowed opacity-70"
+          : "bg-white text-gray-700 border-gray-300 hover:border-[#2F5755] hover:bg-gray-50"
+      }
     `}
             >
               IML
@@ -2145,10 +2161,11 @@ export default function ModelViewer() {
               className={`
       px-[1.5vw] py-[0.5vw] rounded-[0.5vw] text-[0.9vw] font-semibold 
       transition-all cursor-pointer border-2
-      ${viewMode === "plain"
-                  ? "bg-[#2F5755] text-white border-[#2F5755] cursor-not-allowed opacity-70"
-                  : "bg-white text-gray-700 border-gray-300 hover:border-[#2F5755] hover:bg-gray-50"
-                }
+      ${
+        viewMode === "plain"
+          ? "bg-[#2F5755] text-white border-[#2F5755] cursor-not-allowed opacity-70"
+          : "bg-white text-gray-700 border-gray-300 hover:border-[#2F5755] hover:bg-gray-50"
+      }
     `}
             >
               PLAIN
@@ -2327,7 +2344,7 @@ export default function ModelViewer() {
                             <div className="flex flex-col">
                               <p className="text-[.95vw]">
                                 {getModelCategory() === "sweet-box-all" &&
-                                  selectedItem?.id?.includes("4side")
+                                selectedItem?.id?.includes("4side")
                                   ? "4 SIDE"
                                   : "TUB"}
                               </p>
@@ -2346,7 +2363,7 @@ export default function ModelViewer() {
                                 />
                                 <div>
                                   {getModelCategory() === "sweet-box-all" &&
-                                    selectedItem?.id?.includes("4side")
+                                  selectedItem?.id?.includes("4side")
                                     ? "UPLOAD 4 SIDE"
                                     : "UPLOAD TUB"}
                                 </div>
@@ -2415,117 +2432,131 @@ export default function ModelViewer() {
                       <div className="grid gap-[0.5vw] grid-cols-5 auto-rows-min">
                         {selectedItem && (
                           <>
-                            {needsDualUpload() ? (
-                              // Dual upload products
-                              (() => {
-                                const seenPatterns = new Set();
+                            {needsDualUpload()
+                              ? // Dual upload products
+                                (() => {
+                                  const seenPatterns = new Set();
 
-                                return selectedItem.lidPatterns?.map((lidPattern, index) => {
-                                  const tubPattern = selectedItem.tubPatterns[index];
-                                  const patternKey = `${lidPattern}-${tubPattern}`;
-                                  const isDuplicate = seenPatterns.has(patternKey);
+                                  return selectedItem.lidPatterns?.map(
+                                    (lidPattern, index) => {
+                                      const tubPattern =
+                                        selectedItem.tubPatterns[index];
+                                      const patternKey = `${lidPattern}-${tubPattern}`;
+                                      const isDuplicate =
+                                        seenPatterns.has(patternKey);
 
-                                  if (!isDuplicate) {
-                                    seenPatterns.add(patternKey);
-                                  }
+                                      if (!isDuplicate) {
+                                        seenPatterns.add(patternKey);
+                                      }
 
-                                  const isSelected =
-                                    viewMode === "iml" &&
-                                    selectedLidPattern === index + 1;
+                                      const isSelected =
+                                        viewMode === "iml" &&
+                                        selectedLidPattern === index + 1;
 
-                                  return (
-                                    <button
-                                      key={index}
-                                      className={`
+                                      return (
+                                        <button
+                                          key={index}
+                                          className={`
                   w-auto h-auto bg-gray-100 rounded-[0.3vw] 
                   flex items-center justify-center cursor-pointer transition-all
-                  ${isSelected
-                                          ? "border-[0.25vw] border-[#2F5755] shadow-lg bg-[#EFF6FF]"
-                                          : "border border-gray-200 hover:border-[#2F5755] hover:bg-[#F3FAFF]"
-                                        }
+                  ${
+                    isSelected
+                      ? "border-[0.25vw] border-[#2F5755] shadow-lg bg-[#EFF6FF]"
+                      : "border border-gray-200 hover:border-[#2F5755] hover:bg-[#F3FAFF]"
+                  }
                 `}
-                                      onClick={() => {
-                                        if (isDuplicate) {
-                                          alert("No label available for this option.");
-                                          return;
-                                        }
+                                          onClick={() => {
+                                            if (isDuplicate) {
+                                              alert(
+                                                "No label available for this option.",
+                                              );
+                                              return;
+                                            }
 
-                                        setViewMode("iml");
-                                        setSelectedLidPattern(index + 1);
-                                        setSelectedTubPattern(index + 1);
-                                        setPatternModelSB5(lidPattern, tubPattern);
-                                      }}
-                                    >
-                                      <div className="flex flex-col gap-[0.3vw] p-[0.3vw] justify-center items-center">
-                                        {!isDuplicate && (
-                                          <>
-                                            <img
-                                              src={lidPattern}
-                                              alt={`Pattern ${index + 1} Lid`}
-                                              className="w-[90%] h-auto object-contain"
-                                            />
-                                            <img
-                                              src={tubPattern}
-                                              alt={`Pattern ${index + 1} Tub`}
-                                              className="w-[90%] h-auto object-contain"
-                                            />
-                                          </>
-                                        )}
-                                      </div>
-                                    </button>
+                                            setViewMode("iml");
+                                            setSelectedLidPattern(index + 1);
+                                            setSelectedTubPattern(index + 1);
+                                            setPatternModelSB5(
+                                              lidPattern,
+                                              tubPattern,
+                                            );
+                                          }}
+                                        >
+                                          <div className="flex flex-col gap-[0.3vw] p-[0.3vw] justify-center items-center">
+                                            {!isDuplicate && (
+                                              <>
+                                                <img
+                                                  src={lidPattern}
+                                                  alt={`Pattern ${index + 1} Lid`}
+                                                  className="w-[90%] h-auto object-contain"
+                                                />
+                                                <img
+                                                  src={tubPattern}
+                                                  alt={`Pattern ${index + 1} Tub`}
+                                                  className="w-[90%] h-auto object-contain"
+                                                />
+                                              </>
+                                            )}
+                                          </div>
+                                        </button>
+                                      );
+                                    },
                                   );
-                                });
-                              })()
-                            ) : (
-                              // Single upload products
-                              (() => {
-                                const seenPatterns = new Set();
+                                })()
+                              : // Single upload products
+                                (() => {
+                                  const seenPatterns = new Set();
 
-                                return selectedItem.patterns?.map((pattern, index) => {
-                                  const isDuplicate = seenPatterns.has(pattern);
+                                  return selectedItem.patterns?.map(
+                                    (pattern, index) => {
+                                      const isDuplicate =
+                                        seenPatterns.has(pattern);
 
-                                  if (!isDuplicate) {
-                                    seenPatterns.add(pattern);
-                                  }
+                                      if (!isDuplicate) {
+                                        seenPatterns.add(pattern);
+                                      }
 
-                                  const isSelected =
-                                    viewMode === "iml" &&
-                                    selectedPattern === index + 1;
+                                      const isSelected =
+                                        viewMode === "iml" &&
+                                        selectedPattern === index + 1;
 
-                                  return (
-                                    <button
-                                      key={index}
-                                      className={`
+                                      return (
+                                        <button
+                                          key={index}
+                                          className={`
                   w-[3.5vw] h-[3.5vw] bg-gray-100 rounded-[0.3vw] 
                   flex items-center justify-center cursor-pointer transition-all
-                  ${isSelected
-                                          ? "border-[0.25vw] border-[#2F5755] shadow-lg bg-[#EFF6FF]"
-                                          : "border border-gray-200 hover:border-[#2F5755] hover:bg-[#F3FAFF]"
-                                        }
+                  ${
+                    isSelected
+                      ? "border-[0.25vw] border-[#2F5755] shadow-lg bg-[#EFF6FF]"
+                      : "border border-gray-200 hover:border-[#2F5755] hover:bg-[#F3FAFF]"
+                  }
                 `}
-                                      onClick={() => {
-                                        if (isDuplicate) {
-                                          alert("No label available for this option.");
-                                          return;
-                                        }
+                                          onClick={() => {
+                                            if (isDuplicate) {
+                                              alert(
+                                                "No label available for this option.",
+                                              );
+                                              return;
+                                            }
 
-                                        setViewMode("iml");
-                                        setSelectedPattern(index + 1);
-                                        setPatternModel(pattern);
-                                      }}
-                                    >
-                                      {!isDuplicate && (
-                                        <img
-                                          src={pattern}
-                                          alt={`Pattern ${index + 1}`}
-                                          className="w-[80%] h-auto object-contain p-[0.3vw]"
-                                        />
-                                      )}
-                                    </button>
+                                            setViewMode("iml");
+                                            setSelectedPattern(index + 1);
+                                            setPatternModel(pattern);
+                                          }}
+                                        >
+                                          {!isDuplicate && (
+                                            <img
+                                              src={pattern}
+                                              alt={`Pattern ${index + 1}`}
+                                              className="w-[80%] h-auto object-contain p-[0.3vw]"
+                                            />
+                                          )}
+                                        </button>
+                                      );
+                                    },
                                   );
-                                });
-                              })()
-                            )}
+                                })()}
                           </>
                         )}
                       </div>
@@ -2567,10 +2598,11 @@ export default function ModelViewer() {
                     type="button"
                     onClick={() => setActivePart("lid")}
                     className={`flex-1 flex items-center justify-center cursor-pointer gap-[0.5vw] rounded-[0.5vw] text-[0.85vw] font-semibold 
-        ${activePart === "lid"
-                        ? "border border-[#2F5755] text-gray-800 bg-[#F3FAFF]"
-                        : "border border-gray-300 text-gray-700 bg-white"
-                      }`}
+        ${
+          activePart === "lid"
+            ? "border border-[#2F5755] text-gray-800 bg-[#F3FAFF]"
+            : "border border-gray-300 text-gray-700 bg-white"
+        }`}
                   >
                     <span className="w-[0.8vw] h-[0.8vw] rounded-full border-2 border-[#2F5755] flex items-center justify-center">
                       <span
@@ -2587,10 +2619,11 @@ export default function ModelViewer() {
                     type="button"
                     onClick={() => setActivePart("tub")}
                     className={`flex-1 flex items-center justify-center cursor-pointer gap-[0.5vw] rounded-[0.5vw] text-[0.85vw] font-semibold 
-        ${activePart === "tub"
-                        ? "border border-[#2F5755] text-gray-800 bg-[#F3FAFF]"
-                        : "border border-gray-300 text-gray-700 bg-white"
-                      }`}
+        ${
+          activePart === "tub"
+            ? "border border-[#2F5755] text-gray-800 bg-[#F3FAFF]"
+            : "border border-gray-300 text-gray-700 bg-white"
+        }`}
                   >
                     <span className="w-[0.8vw] h-[0.8vw] rounded-full border-2 border-[#2F5755] flex items-center justify-center">
                       <span
@@ -2714,15 +2747,16 @@ export default function ModelViewer() {
                     >
                       <span
                         className={`w-[0.8vw] h-[0.8vw] rounded-[0.2vw] border-2 
-                                 ${(activePart === "lid" &&
-                            lidColorMode === "white" &&
-                            topColor === "#ffffff") ||
-                            (activePart === "tub" &&
-                              tubColorMode === "white" &&
-                              bottomColor === "#ffffff")
-                            ? "border-[#2F5755] bg-[#2F5755]"
-                            : "border-gray-300 bg-white"
-                          }`}
+                                 ${
+                                   (activePart === "lid" &&
+                                     lidColorMode === "white" &&
+                                     topColor === "#ffffff") ||
+                                   (activePart === "tub" &&
+                                     tubColorMode === "white" &&
+                                     bottomColor === "#ffffff")
+                                     ? "border-[#2F5755] bg-[#2F5755]"
+                                     : "border-gray-300 bg-white"
+                                 }`}
                       />
                       White
                     </button>
@@ -2743,15 +2777,16 @@ export default function ModelViewer() {
                     >
                       <span
                         className={`w-[0.8vw] h-[0.8vw] rounded-[0.2vw] border-2 
-        ${(activePart === "lid" &&
-                            lidColorMode === "black" &&
-                            topColor === "#000000") ||
-                            (activePart === "tub" &&
-                              tubColorMode === "black" &&
-                              bottomColor === "#000000")
-                            ? "border-[#2F5755] bg-[#2F5755]"
-                            : "border-gray-300 bg-white"
-                          }`}
+        ${
+          (activePart === "lid" &&
+            lidColorMode === "black" &&
+            topColor === "#000000") ||
+          (activePart === "tub" &&
+            tubColorMode === "black" &&
+            bottomColor === "#000000")
+            ? "border-[#2F5755] bg-[#2F5755]"
+            : "border-gray-300 bg-white"
+        }`}
                       />
                       Black
                     </button>
@@ -2773,15 +2808,16 @@ export default function ModelViewer() {
                     >
                       <span
                         className={`w-[0.8vw] h-[0.8vw] rounded-[0.2vw] border-2 
-        ${(activePart === "lid" &&
-                            lidColorMode === "gold" &&
-                            topColor === "#D4B102") ||
-                            (activePart === "tub" &&
-                              tubColorMode === "gold" &&
-                              bottomColor === "#D4B102")
-                            ? "border-[#2F5755] bg-[#2F5755]"
-                            : "border-gray-300 bg-white"
-                          }`}
+        ${
+          (activePart === "lid" &&
+            lidColorMode === "gold" &&
+            topColor === "#D4B102") ||
+          (activePart === "tub" &&
+            tubColorMode === "gold" &&
+            bottomColor === "#D4B102")
+            ? "border-[#2F5755] bg-[#2F5755]"
+            : "border-gray-300 bg-white"
+        }`}
                       />
                       Gold
                     </button>
@@ -2802,15 +2838,16 @@ export default function ModelViewer() {
                     >
                       <span
                         className={`w-[0.8vw] h-[0.8vw] rounded-[0.2vw] border-2 
-        ${(activePart === "lid" &&
-                            lidColorMode === "transparent" &&
-                            topColor === "rgba(255, 255, 255, 0)") ||
-                            (activePart === "tub" &&
-                              tubColorMode === "transparent" &&
-                              bottomColor === "rgba(255, 255, 255, 0)")
-                            ? "border-[#2F5755] bg-[#2F5755]"
-                            : "border-gray-300 bg-white"
-                          }`}
+        ${
+          (activePart === "lid" &&
+            lidColorMode === "transparent" &&
+            topColor === "rgba(255, 255, 255, 0)") ||
+          (activePart === "tub" &&
+            tubColorMode === "transparent" &&
+            bottomColor === "rgba(255, 255, 255, 0)")
+            ? "border-[#2F5755] bg-[#2F5755]"
+            : "border-gray-300 bg-white"
+        }`}
                       />
                       Transparent
                     </button>
@@ -2862,8 +2899,9 @@ export default function ModelViewer() {
           >
             Export
             <ChevronDown
-              className={`w-[1vw] h-[1vw] transition-transform ${showExportMenu ? "rotate-180" : ""
-                }`}
+              className={`w-[1vw] h-[1vw] transition-transform ${
+                showExportMenu ? "rotate-180" : ""
+              }`}
             />
           </button>
 
@@ -2956,8 +2994,9 @@ export default function ModelViewer() {
                 return (
                   <div
                     key={cat.id}
-                    className={`mb-[0.75vw] overflow-y-auto rounded-[0.5vw] ${isOpen ? "border border-gray-300" : ""
-                      }`}
+                    className={`mb-[0.75vw] overflow-y-auto rounded-[0.5vw] ${
+                      isOpen ? "border border-gray-300" : ""
+                    }`}
                   >
                     <button
                       onClick={() => setOpenCategory(isOpen ? null : cat.id)}
@@ -2992,8 +3031,9 @@ export default function ModelViewer() {
 
                     <div
                       id={`cat-${cat.id}`}
-                      className={`mt-[.3vw] transition-all overflow-hidden ${isOpen ? "max-h-[50vw]" : "max-h-0"
-                        }`}
+                      className={`mt-[.3vw] transition-all overflow-hidden ${
+                        isOpen ? "max-h-[50vw]" : "max-h-0"
+                      }`}
                       style={{ transition: "max-height .5s ease-in" }}
                     >
                       {/* Check if category has sections or flat items */}
@@ -3021,10 +3061,11 @@ export default function ModelViewer() {
                                           setOpenCategory(cat.id);
                                         }
                                       }}
-                                      className={`flex flex-col h-[7vw] items-center gap-[0.4vw] relative rounded-[.5vw] cursor-pointer transition-all pb-[.5vw] ${isSelected
+                                      className={`flex flex-col h-[7vw] items-center gap-[0.4vw] relative rounded-[.5vw] cursor-pointer transition-all pb-[.5vw] ${
+                                        isSelected
                                           ? "bg-[#7f9998] text-black shadow-md border-[#2B7FFF] border-1"
                                           : "bg-[#EFF6FF] text-black hover:bg-gray-50 border border-gray-200"
-                                        }`}
+                                      }`}
                                     >
                                       <img
                                         src={item.image}
@@ -3032,16 +3073,18 @@ export default function ModelViewer() {
                                         className="w-[4vw] h-[4vw] object-contain absolute top-[0vw]"
                                       />
                                       <div
-                                        className={`w-[5vw] h-[4vw]   mt-[2vw] rounded-[.5vw] flex items-center justify-center ${isSelected
+                                        className={`w-[5vw] h-[4vw]   mt-[2vw] rounded-[.5vw] flex items-center justify-center ${
+                                          isSelected
                                             ? "bg-[#2F5755] "
                                             : "bg-[#ffffff] border border-gray-200"
-                                          }`}
+                                        }`}
                                       >
                                         <span
-                                          className={`text-[.65vw] mt-[1vw] w-full ${isSelected
+                                          className={`text-[.65vw] mt-[1vw] w-full ${
+                                            isSelected
                                               ? "text-white "
                                               : "text-black"
-                                            }`}
+                                          }`}
                                           dangerouslySetInnerHTML={{
                                             __html: item.display,
                                           }}
@@ -3068,10 +3111,11 @@ export default function ModelViewer() {
                                     setOpenCategory(cat.id);
                                   }
                                 }}
-                                className={`flex flex-col items-center gap-[0.4vw] relative rounded-[.5vw] cursor-pointer transition-all h-[7vw] pb-[.5vw] ${isSelected
+                                className={`flex flex-col items-center gap-[0.4vw] relative rounded-[.5vw] cursor-pointer transition-all h-[7vw] pb-[.5vw] ${
+                                  isSelected
                                     ? "bg-[#7f9998] text-black shadow-md border-[#2B7FFF] border-1"
                                     : "bg-[#EFF6FF] text-black hover:bg-gray-50 border border-gray-200"
-                                  }`}
+                                }`}
                               >
                                 <img
                                   src={item.image}
@@ -3079,14 +3123,16 @@ export default function ModelViewer() {
                                   className="w-[4vw] h-[4vw] object-contain absolute top-[0vw]"
                                 />
                                 <div
-                                  className={`w-[5vw] h-[4vw]   mt-[2vw] rounded-[.5vw] flex items-center justify-center ${isSelected
+                                  className={`w-[5vw] h-[4vw]   mt-[2vw] rounded-[.5vw] flex items-center justify-center ${
+                                    isSelected
                                       ? "bg-[#2F5755] "
                                       : "bg-[#ffffff] border border-gray-200"
-                                    }`}
+                                  }`}
                                 >
                                   <span
-                                    className={`text-[.65vw] mt-[1.5vw] w-full ${isSelected ? "text-white " : "text-black"
-                                      }`}
+                                    className={`text-[.65vw] mt-[1.5vw] w-full ${
+                                      isSelected ? "text-white " : "text-black"
+                                    }`}
                                     dangerouslySetInnerHTML={{
                                       __html: item.display,
                                     }}
