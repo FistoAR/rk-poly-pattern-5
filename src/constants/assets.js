@@ -22,7 +22,7 @@ import sb_5_500 from "../assets/models/sweet_box_5/500g.glb";
 
 // sweet box 4 side IML
 import sb_4_250 from "../assets/models/sweet_box_4/250gms.glb";
-import sb_4_500 from "../assets/models/sweet_box_4/500gms.glb";
+import sb_4_500 from "../assets/models/sweet_box_4/500ml sweet box(new) 5 (1).glb";
 
 // tamper evident
 import te_250 from "../assets/models/tamper_evident/250_gms.glb";

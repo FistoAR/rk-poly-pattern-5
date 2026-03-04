@@ -102,18 +102,18 @@ import {
   rs_300_6,
   rs_300_7,
   rs_300_8,
-  rs_300_9,
+  // rs_300_9,
   rs_300_10,
-  rs_300_11,
+  // rs_300_11,
   rs_300_12,
   rs_300_13,
-  rs_300_14,
+  // rs_300_14,
   rs_300_15,
   rs_300_16,
   rs_300_17,
   rs_300_18,
   rs_300_19,
-  rs_300_20,
+  // rs_300_20,
   rs_300_21,
   rs_300_22,
   
@@ -125,13 +125,13 @@ import {
   rs_500_6,
   rs_500_7,
   rs_500_8,  
-  rs_500_9,
+  // rs_500_9,
   rs_500_10,
   rs_500_11,  
   rs_500_12,
   rs_500_13,
   rs_500_14,  
-  rs_500_15,
+  // rs_500_15,
   rs_500_16,
 
 
@@ -452,18 +452,18 @@ export default function ModelViewer() {
             rs_300_6,
             rs_300_7,
             rs_300_8,
-            rs_300_9,
+            // rs_300_9,
             rs_300_10,
-            rs_300_11,
+            // rs_300_11,
             rs_300_12,
             rs_300_13,
-            rs_300_14,
+            // rs_300_14,
             rs_300_15,
             rs_300_16,
             rs_300_17,
             rs_300_18,
             rs_300_19,
-            rs_300_20,
+            // rs_300_20,
             rs_300_21,
             rs_300_22,
           ],
@@ -485,13 +485,13 @@ export default function ModelViewer() {
               rs_500_6,
               rs_500_7,
               rs_500_8,  
-              rs_500_9,
+              // rs_500_9,
               rs_500_10,
               rs_500_11,  
               rs_500_12,
               rs_500_13,
               rs_500_14,  
-              rs_500_15,
+              // rs_500_15,
               rs_500_16,
           ],
           modelScale: 0.65,
@@ -904,12 +904,16 @@ export default function ModelViewer() {
       mat.setAlphaMode("OPAQUE");
     });
 
-    const textureSubMats = getSubTextureMaterials(materials);
-    textureSubMats.forEach((mat) => {
-      console.log(`textureMats: ${mat.name}`);
-      mat.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 1]);
-      mat.setAlphaMode("OPAQUE");
-    });
+const textureSubMats = getSubTextureMaterials(materials);
+textureSubMats.forEach((mat) => {
+  console.log(`subTextureMat restoring: ${mat.name}`);
+  // Restore subtexture visibility fully
+  mat.pbrMetallicRoughness.baseColorTexture?.setTexture(null); // keep any baked texture
+  mat.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 1]);
+  mat.setAlphaMode("OPAQUE");
+  mat.pbrMetallicRoughness.setMetallicFactor(0.0);
+  mat.pbrMetallicRoughness.setRoughnessFactor(0.5);
+});
 
     mv.requestUpdate();
     console.log("✅ Pattern applied to all texture materials");
@@ -957,6 +961,15 @@ export default function ModelViewer() {
     textureMats[1].pbrMetallicRoughness.baseColorTexture.setTexture(tex2);
     textureMats[1].pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 1]);
     textureMats[1].setAlphaMode("OPAQUE");
+
+    // Restore subtexture materials
+const subTexMats = getSubTextureMaterials(materials);
+subTexMats.forEach((mat) => {
+  mat.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 1]);
+  mat.setAlphaMode("OPAQUE");
+  mat.pbrMetallicRoughness.setMetallicFactor(0.0);
+  mat.pbrMetallicRoughness.setRoughnessFactor(0.5);
+});
 
     mv.requestUpdate();
     console.log("✅ Lid & tub patterns applied successfully");
@@ -1107,32 +1120,31 @@ export default function ModelViewer() {
   //   console.log("✅ Plain mode activated - all textures removed");
   // };
 
-  const setPlainModel = () => {
-    if (!modelRef.current || !modelLoaded) return;
+const setPlainModel = () => {
+  if (!modelRef.current || !modelLoaded) return;
 
-    const mv = modelRef.current;
-    const materials = mv.model?.materials;
-    if (!materials) return;
+  const mv = modelRef.current;
+  const materials = mv.model?.materials;
+  if (!materials) return;
 
-    materials.forEach((mat) => {
-      const name = mat.name?.toLowerCase();
-      if (!name) return;
+  materials.forEach((mat) => {
+    const name = mat.name?.toLowerCase();
+    if (!name) return;
 
-      // Match materials ending with "texture"
-      // but explicitly exclude ones ending with "notexture"
-      const isTexture = name.endsWith("texture") && !name.endsWith("notexture");
+    const isTexture = name.endsWith("texture") && !name.endsWith("notexture");
+    const isSubTexture = name.endsWith("subtexture");
 
-      if (!isTexture) return;
+    if (!isTexture && !isSubTexture) return;
 
-      // Clear texture + make transparent
-      mat.pbrMetallicRoughness.baseColorTexture?.setTexture(null);
-      mat.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 0]);
-      mat.setAlphaMode("BLEND");
-    });
+    // Clear texture + make transparent
+    mat.pbrMetallicRoughness.baseColorTexture?.setTexture(null);
+    mat.pbrMetallicRoughness.setBaseColorFactor([1, 1, 1, 0]);
+    mat.setAlphaMode("BLEND");
+  });
 
-    mv.requestUpdate();
-    console.log("✅ Plain mode activated - texture materials cleared");
-  };
+  mv.requestUpdate();
+  console.log("✅ Plain mode activated - texture + subtexture materials cleared");
+};
 
   // ✅ FIXED: Restore IML patterns
   const restoreIMLMode = () => {
@@ -1732,7 +1744,7 @@ export default function ModelViewer() {
 
     applyTextureToMaterial({
       event: e,
-      materialName: "texture_area",
+      materialName: "lid_texture",
       modelRef,
       modelLoaded,
     });
@@ -1749,7 +1761,7 @@ export default function ModelViewer() {
 
     applyTextureToMaterial({
       event: e,
-      materialName: "texture_area2",
+      materialName: "tub_texture",
       modelRef,
       modelLoaded,
     });
