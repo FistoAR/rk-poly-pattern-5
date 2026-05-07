@@ -1,7 +1,7 @@
 import LoginModal, { generateAuthToken } from "./LoginModal";
 import ProfileDropdown from "./ProfileDropdown";
 import { ChevronDown } from "lucide-react";
-
+import { useParams, useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect, useEffectEvent } from "react";
 import a4_watermark from "../assets/images/a4-watermark.jpg";
 import rk_logo from "../assets/images/rk_logo.png";
@@ -293,14 +293,28 @@ export const LoadingSpinner = () => {
 };
 
 export default function ModelViewer() {
+const { productSlug } = useParams();
+const navigate = useNavigate();
+
+  const ROUTE_TO_MODEL = {
+    "round-containers": round250,
+    "round-square": rs300,
+    "sweet-box": sb250,
+    "tamper-evident": te_250,
+  };
+
   const modelRef = useRef(null);
   const [labelUrl, setLabelUrl] = useState("");
   const [topColor, setTopColor] = useState("#ffffff");
   const [bottomColor, setBottomColor] = useState("#ffffff");
   const [modelLoaded, setModelLoaded] = useState(false);
-  const [selectedModel, setSelectedModel] = useState(round250);
+  const [selectedModel, setSelectedModel] = useState(
+    () => ROUTE_TO_MODEL[productSlug] || round250
+  );
   const [bgColor, setBgColor] = useState("#b0b0b0");
-  const [displayModel, setDisplayModel] = useState(round250);
+  const [displayModel, setDisplayModel] = useState(
+    () => ROUTE_TO_MODEL[productSlug] || round250
+  );
   const [currentView, setCurrentView] = useState("home");
   const [customLabelTexture, setCustomLabelTexture] = useState(null);
   const [openCategory, setOpenCategory] = useState(null);
@@ -308,6 +322,9 @@ export default function ModelViewer() {
   const [modelScaleValue, setModelScaleValue] = useState(0.65);
   const [isLoading, setIsLoading] = useState(false);
   const [activePart, setActivePart] = useState("lid"); // "lid" | "tub"
+
+
+
 
   // one of: "white" | "black" | "transparent" | "custom"
   // const [colorMode, setColorMode] = useState("white");
@@ -357,6 +374,20 @@ export default function ModelViewer() {
   const [selectedPattern, setSelectedPattern] = useState(1); // For non-SB5 products
   const [selectedLidPattern, setSelectedLidPattern] = useState(1); // For SB5 lid
   const [selectedTubPattern, setSelectedTubPattern] = useState(1); // For SB5 tub
+
+useEffect(() => {
+  if (!productSlug) return;
+
+  const ROUTE_TO_CATEGORY = {
+    "round-containers": "round",
+    "round-square": "round_bevel",
+    "sweet-box": "sweet-box-all",
+    "tamper-evident": "sweet_box",
+  };
+
+  const categoryId = ROUTE_TO_CATEGORY[productSlug];
+  if (categoryId) setOpenCategory(categoryId);
+}, [productSlug]);
 
   // Updated categories array with 10 patterns for ALL products
   // Updated categories array with 10 patterns for ALL products
@@ -1028,6 +1059,28 @@ subTexMats.forEach((mat) => {
     setSelectedLidPattern(1);
     setSelectedTubPattern(1);
     setViewMode("iml");
+
+
+  // ✅ ADD THIS - update URL based on selected model
+  const MODEL_TO_ROUTE = {
+    [round250]: "round-containers",
+    [round500]: "round-containers",
+    [rs300]: "round-square",
+    [rs500]: "round-square",
+    [rs750]: "round-square",
+    [rs1000]: "round-square",
+    [sb250]: "sweet-box",
+    [sb500]: "sweet-box",
+    [sb1000]: "sweet-box",
+    [sb_4_250]: "sweet-box",
+    [sb_4_500]: "sweet-box",
+    [te_250]: "tamper-evident",
+    [te_500]: "tamper-evident",
+  };
+
+    const slug = MODEL_TO_ROUTE[modelPath];
+  if (slug) navigate(`/products/${slug}`, { replace: true });
+
 
     // Search through all categories and sections
     let foundItem = null;
